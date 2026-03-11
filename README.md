@@ -2,6 +2,8 @@
 
 A comprehensive Streamlit web application for analyzing phishing emails using Natural Language Processing (NLP) techniques with NLTK.
 
+![Application Screenshot](screenshots/app_screenshot.png)
+
 ## Features
 
 - **Dataset Overview**: Interactive exploration of the phishing email dataset with statistics and visualizations
