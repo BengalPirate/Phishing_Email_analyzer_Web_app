@@ -60,8 +60,6 @@ AI_Detection_5/
 5. Set the main file path to `phishing_nlp_app.py`
 6. Click "Deploy"
 
-**Note**: You'll need to upload the dataset to the repository or use a cloud storage service.
-
 ### 2. Heroku
 
 1. Install the Heroku CLI: [https://devcenter.heroku.com/articles/heroku-cli](https://devcenter.heroku.com/articles/heroku-cli)
