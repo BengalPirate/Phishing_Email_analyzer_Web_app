@@ -50,8 +50,8 @@ nltk_data/
 # Logs
 *.log
 
-# Large data files (optional - comment out if you want to include dataset)
-# data/*.csv
+# Dataset files (download from Kaggle - see README)
+data/*.csv
 
 # Cache
 .cache/

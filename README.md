@@ -12,7 +12,7 @@ A comprehensive Streamlit web application for analyzing phishing emails using Na
 ## Prerequisites
 
 - Python 3.9 or higher
-- Access to the phishing email dataset (`phishing_email.csv`)
+- Phishing Email Dataset from Kaggle (see [Dataset Setup](#dataset-setup) section below)
 
 ## Installation
 
@@ -46,7 +46,7 @@ AI_Detection_5/
 ├── README.md                # This file
 ├── .gitignore               # Git ignore file
 └── data/
-    └── phishing_email.csv   # Dataset file (102MB)
+    └── phishing_email.csv   # Dataset file (download from Kaggle - see Dataset Setup)
 ```
 
 ## Cloud Deployment Options
@@ -127,23 +127,42 @@ gcloud run deploy phishing-nlp-app --source . --platform managed --region us-cen
 az webapp up --name your-app-name --runtime "PYTHON:3.13"
 ```
 
-## Dataset Configuration
+## Dataset Setup
 
-The dataset is included in the `data/` directory:
-```
-data/phishing_email.csv
-```
+### Downloading the Dataset
+
+This application uses the **Phishing Email Dataset** from Kaggle. Follow these steps to download it:
+
+1. Visit the Kaggle dataset page: [Phishing Email Dataset](https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset)
+
+2. Download the dataset (you may need to create a free Kaggle account)
+
+3. Extract the downloaded ZIP file
+
+4. Create a `data/` directory in the project root if it doesn't exist:
+   ```bash
+   mkdir -p data
+   ```
+
+5. Copy the `phishing_email.csv` file to the `data/` directory:
+   ```bash
+   cp /path/to/downloaded/phishing_email.csv data/
+   ```
+
+### Dataset Structure
 
 The dataset contains two columns:
 - `text_combined`: The email text content
 - `label`: 0 for legitimate emails, 1 for phishing emails
 
-**Note for GitHub/Cloud Deployment:**
-- The dataset file is 102MB, which is under GitHub's 100MB file size warning but may be flagged
-- For Streamlit Cloud deployment, you can either:
-  1. Include the dataset in your repository (it will work but takes longer to clone)
-  2. Upload to a cloud storage service (S3, Google Drive, etc.) and update the path in `phishing_nlp_app.py` line 86
-  3. Use Streamlit's file uploader widget to let users upload their own dataset
+### Dataset Citation
+
+```
+Alam, N. A. (2024). Phishing Email Dataset. Kaggle.
+https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset
+```
+
+**Note**: The dataset file is approximately 102MB and contains 82,486 email samples. It is not included in this repository due to its size and licensing considerations.
 
 ## Usage Tips
 
@@ -170,12 +189,12 @@ nltk.download('all')
 ## Assignment Requirements
 
 This application fulfills the following requirements:
-- ✅ Dataset exploration and display
-- ✅ Text preprocessing demonstration
-- ✅ Word cloud visualization
-- ✅ NLTK-based NLP analysis (POS tagging, NER, n-grams)
-- ✅ Interactive web interface using Streamlit
-- ✅ Cloud deployment ready
+- Dataset exploration and display
+- Text preprocessing demonstration
+- Word cloud visualization
+- NLTK-based NLP analysis (POS tagging, NER, n-grams)
+- Interactive web interface using Streamlit
+- Cloud deployment ready
 
 ## Technologies Used
 
